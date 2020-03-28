@@ -16,12 +16,13 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-#import <Foundation/Foundation.h>
-#import "RLMApp_Private.hpp"
+#import <Realm/RLMApp.h>
 
 #import "RLMAppCredentials_Private.hpp"
 #import "RLMSyncUser_Private.hpp"
 #import "RLMSyncManager_Private.h"
+
+#import "sync/app.hpp"
 
 using namespace realm;
 
@@ -126,7 +127,6 @@ namespace {
             boundConfiguration.default_request_timeout_ms = (uint64_t)configuration.defaultRequestTimeoutMS;
         }
         _app = realm::app::App(boundConfiguration);
-        apps[appId] = self;
         return self;
     }
     return nil;
