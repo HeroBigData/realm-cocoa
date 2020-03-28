@@ -18,19 +18,22 @@ Pod::Spec.new do |s|
   s.documentation_url       = "https://realm.io/docs/objc/#{has_versioned_docs ? s.version : 'latest'}"
   s.license                 = { :type => 'Apache 2.0', :file => 'LICENSE' }
 
-  public_header_files       = 'include/**/RLMArray.h',
+  public_header_files       = 'include/**/RLMApp.h',
+                              'include/**/RLMAppCredentials.h',
+                              'include/**/RLMArray.h',
                               'include/**/RLMCollection.h',
                               'include/**/RLMConstants.h',
                               'include/**/RLMListBase.h',
                               'include/**/RLMMigration.h',
+                              'include/**/RLMNetworkTransport.h',
                               'include/**/RLMObject.h',
                               'include/**/RLMObjectBase.h',
                               'include/**/RLMObjectSchema.h',
                               'include/**/RLMOptionalBase.h',
                               'include/**/RLMPlatform.h',
                               'include/**/RLMProperty.h',
-                              'include/**/RLMRealm.h',
                               'include/**/RLMRealm+Sync.h',
+                              'include/**/RLMRealm.h',
                               'include/**/RLMRealmConfiguration+Sync.h',
                               'include/**/RLMRealmConfiguration.h',
                               'include/**/RLMResults.h',
@@ -40,7 +43,6 @@ Pod::Spec.new do |s|
                               'include/**/RLMSyncManager.h',
                               'include/**/RLMSyncPermission.h',
                               'include/**/RLMSyncSession.h',
-                              'include/**/RLMSyncSubscription.h',
                               'include/**/RLMSyncUser.h',
                               'include/**/RLMSyncUtil.h',
                               'include/**/RLMThreadSafeReference.h',
@@ -95,16 +97,16 @@ Pod::Spec.new do |s|
                               }
   s.preserve_paths          = %w(build.sh include)
 
-  s.ios.deployment_target   = '8.0'
+  s.ios.deployment_target   = '12.0'
   s.ios.vendored_library    = 'core/librealmcore-ios.a'
 
-  s.osx.deployment_target   = '10.9'
+  s.osx.deployment_target   = '10.14'
   s.osx.vendored_library    = 'core/librealmcore-macosx.a'
 
-  s.watchos.deployment_target = '2.0'
+  s.watchos.deployment_target = '6.0'
   s.watchos.vendored_library  = 'core/librealmcore-watchos.a'
 
-  s.tvos.deployment_target = '9.0'
+  s.tvos.deployment_target = '12.0'
   s.tvos.vendored_library  = 'core/librealmcore-tvos.a'
 
   s.subspec 'Headers' do |s|
